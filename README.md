@@ -18,11 +18,10 @@ ClickToLens is a Chrome extension that allows you to quickly capture any  with a
 
 ## Usage
 
-1.  Right-click on any webpage.
+1.  Right-click on any image.
 2.  Select "ClickToLens" from the context menu.
-3.  A selection tool will appear, allowing you to capture a specific area of the screen.
-4.  Choose the search engine you want to use to analyze the captured image.
-5.  The image will be automatically sent to the selected search engine, and the results will be displayed in a new tab.
+3.  Choose the search engine you want to use to analyze the captured image.
+4.  The image will be automatically sent to the selected search engine, and the results will be displayed in a new tab.
 
 ## Contributing
 
