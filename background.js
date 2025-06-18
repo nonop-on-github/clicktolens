@@ -1,5 +1,4 @@
 chrome.runtime.onInstalled.addListener(() => {
-
   chrome.contextMenus.create({
     id: "searchWithGoogleLens",
     title: "Search with Google Lens",
@@ -8,32 +7,38 @@ chrome.runtime.onInstalled.addListener(() => {
 
   chrome.contextMenus.create({
     id: "searchOtherEnginesParent",
-    title: "⬇️ OTHER SEARCH ENGINES ⬇️",
+    title: "Search with Other Engines",
     contexts: ["image"]
   });
-
 
   chrome.contextMenus.create({
     id: "searchBingImages",
     title: "Bing Images",
+    parentId: "searchOtherEnginesParent",
     contexts: ["image"]
   });
 
   chrome.contextMenus.create({
     id: "searchYandexImages",
     title: "Yandex Images",
+    parentId: "searchOtherEnginesParent",
     contexts: ["image"]
   });
 
   chrome.contextMenus.create({
     id: "searchTinEye",
     title: "TinEye",
+    parentId: "searchOtherEnginesParent",
     contexts: ["image"]
   });
 });
 
 chrome.contextMenus.onClicked.addListener((info, tab) => {
-  const imageUrl = info.srcUrl; 
+  if (info.menuItemId === "searchOtherEnginesParent") {
+    return;
+  }
+  
+  const imageUrl = info.srcUrl;
   let searchUrl = '';
 
   if (!imageUrl) {
